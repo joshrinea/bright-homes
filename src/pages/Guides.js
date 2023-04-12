@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 function Guides() {
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     useEffect(() => {
         AOS.init();
@@ -10,6 +16,27 @@ function Guides() {
 
     return (
         <>
+          {/* modal */}
+            <div
+                className="modal show"
+                style={{ display: 'block', position: 'initial' }}
+            >
+                <Modal show={show} onClick={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={handleClose}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+
             <main id='main'>
                 <div className='breadcrumbs bg-primary' data-aos='fade-in' >
                     <div className='container'>
@@ -24,15 +51,15 @@ function Guides() {
                         <div className='section-title mt-5'>
                             <h2>Instructions</h2>
                             <p>For Buyers</p>
-
                             <section id='features' className='features'>
                                 <div className='container' data-aos="fade-up">
 
                                     <div className='row' data-aos="zoom-in" data-aos-delay="100">
                                         <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role='button'>
-                                            <div className='icon-box'>
+                                            <div className='icon-box' onClick={handleShow}>
                                                 <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                <h3><a href="#">Requirements</a></h3>
+                                                <h3><a href="javascript:void(0)">Requirements</a></h3>
+                                               
                                             </div>
                                         </div>
 
@@ -149,6 +176,7 @@ function Guides() {
                     </div>
                 </div>
             </main>
+
         </>
     )
 }

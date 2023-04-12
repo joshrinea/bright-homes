@@ -10,6 +10,7 @@ import Bulacan from './pages/units/Bulacan';
 import Pueblo from './pages/units/elPueblo';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import Celine from './pages/units/alphine/Celine';
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -51,6 +52,7 @@ function App() {
           <Route path="alphine-county" element={<Alphine />} />
           <Route path="bulacan" element={<Bulacan />} />
           <Route path="pueblo" element={<Pueblo />} />
+          <Route path="celine" element={<Celine />} />
           <Route path="guides" element={<Guides />} />
         </Routes>
         <Footer />

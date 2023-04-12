@@ -11,10 +11,7 @@ import Amenities2 from '../img/content/amenities2.jpg';
 import Amenities3 from '../img/content/amenities3.jpg';
 import { Link } from "react-router-dom";
 
-
-function DisplayAntipoloDetails() {
-    
-}
+import Iframe from "react-iframe";
 
 function Home() {
 
@@ -23,6 +20,43 @@ function Home() {
             duration: 1000
         });
     }, [])
+
+    const displayAntipoloDetails = () => {
+        const bulacanElement = document.getElementById("bulacanMap");
+        const antipoloElement = document.getElementById("antipoloMap");
+        const bulacanBtn = document.getElementById("btnBulacan");
+        const antipoloBtn = document.getElementById("btnAntipolo");
+
+        bulacanElement.style.display = "none";
+        antipoloElement.style.display = "block";
+        antipoloElement.classList.remove("d-none")
+        bulacanBtn.classList.remove('active')
+        antipoloBtn.classList.add('active')
+
+        const bulacanDetails = document.getElementById("bulacanDetails");
+        const antipoloDetails = document.getElementById("antipoloDetails");
+        bulacanDetails.style.display = "none";
+        antipoloDetails.style.display = "block";
+        antipoloDetails.classList.remove("d-none")
+    }
+
+    const displayBulacanDetails = () => {
+        const bulacanElement = document.getElementById("bulacanMap");
+        const antipoloElement = document.getElementById("antipoloMap");
+        bulacanElement.style.display = "block";
+        antipoloElement.style.display = "none";
+
+        const bulacanDetails = document.getElementById("bulacanDetails");
+        const antipoloDetails = document.getElementById("antipoloDetails");
+        bulacanDetails.style.display = "block";
+        antipoloDetails.style.display = "none";
+
+        const bulacanBtn = document.getElementById("btnBulacan");
+        const antipoloBtn = document.getElementById("btnAntipolo");
+
+        bulacanBtn.classList.add('active')
+        antipoloBtn.classList.remove('active')
+    }
 
     return (
         <>
@@ -237,18 +271,22 @@ function Home() {
                                 {/* Bulacan Map */}
                                 <div className="mapouter bulacan-map" id="bulacanMap" style={{ position: 'relative', textAlign: 'right', height: '100%', width: '100%' }}>
                                     <div className="gmap_canvas" style={{ overflow: 'hidden', background: 'none !important', height: '100%', width: '100%' }}>
-                                        <iframe width="100%" height="100%" id="gmap_canvas"
+                                        {/* <iframe width="100%" height="100%" id="gmap_canvas"
                                             src="https://maps.google.com/maps?q=bright%20homes%20caypombo&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                            frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+                                            frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="Bulacan map"></iframe> */}
+
+                                        <Iframe width="100%" height="100%" id="gmap_canvas" frameBorder={0} scrolling="no" title="Bulacan Map" allow="fullscreen" src="https://maps.google.com/maps?q=bright%20homes%20caypombo&t=&z=15&ie=UTF8&iwloc=&output=embed" />
                                     </div>
                                 </div>
 
                                 {/* Antipolo Map */}
                                 <div className="maprouter antipolo-map d-none" id="antipoloMap" style={{ position: 'relative', textAlign: 'right', height: '100%', width: '100%' }}>
                                     <div class="gmap_canvas" style={{ overflow: 'hidden', background: 'none !important', height: '100%', width: '100%' }}>
-                                        <iframe width="100%" height="100%" id="gmap_canvas"
+                                        {/* <iframe width="100%" height="100%" id="gmap_canvas"
                                             src="https://maps.google.com/maps?q=alpine%20county%20antipolo&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                            frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+                                            frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="Antipolo map"></iframe> */}
+
+                                        <Iframe width="100%" height="100%" id="gmap_canvas" frameBorder={0} scrolling="no" title="Antipolo Map" allow="fullscreen" src="https://maps.google.com/maps?q=alpine%20county%20antipolo&t=&z=15&ie=UTF8&iwloc=&output=embed" />
                                         <a href="https://fmovies-online.net">fmovies</a><br />
                                         {/* <style>
                                                 .mapouter {
@@ -274,11 +312,11 @@ function Home() {
                             <div className="col-lg-5">
                                 <div className="btn-group col-lg-12 ms-3" role="group" aria-label="Basic example">
                                     {/* onClick={displayBulacanDetails()} */}
-                                    <button type="button" id="btnBulacan" className="btn btn-primary btn-lg btn-bulacan active" >
+                                    <button type="button" id="btnBulacan" className="btn btn-primary btn-lg btn-bulacan active" onClick={displayBulacanDetails}>
                                         BULACAN
                                     </button>
                                     {/* onClick={displayAntipoloDetails()} */}
-                                    <button type="button" id="btnAntipolo" className="btn btn-primary btn-lg btn-bulacan" onClick={DisplayAntipoloDetails}>
+                                    <button type="button" id="btnAntipolo" className="btn btn-primary btn-lg btn-bulacan" onClick={displayAntipoloDetails}>
                                         ANTIPOLO
                                     </button>
                                 </div>

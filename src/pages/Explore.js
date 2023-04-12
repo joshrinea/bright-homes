@@ -100,32 +100,36 @@ function Explore() {
 
                 <section id='counts' className='counts section-bg'>
                     <div className='container'>
-                        <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                            <div className='row counters'>
+                        <div className='row counters'>
 
-                                <div className='col-lg-4 col-4 text-center'>
+                            <div className='col-lg-4 col-4 text-center'>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                     <span>
                                         {counterOn && <CountUp start={0} end={52} duration={2} delay={0} className='purecounter' />}
                                     </span>
-                                    <p>Units sold</p>
-                                </div>
+                                </ScrollTrigger>
+                                <p>Units sold</p>
+                            </div>
 
-                                <div className='col-lg-4 col-4 text-center'>
+                            <div className='col-lg-4 col-4 text-center'>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                     <span>
                                         {counterOn && <CountUp start={0} end={99} duration={2} delay={0} className='purecounter' />}
                                     </span>
-                                    <p>Units Available</p>
-                                </div>
+                                </ScrollTrigger>
+                                <p>Units Available</p>
+                            </div>
 
-                                <div className='col-lg-4 col-4 text-center'>
+                            <div className='col-lg-4 col-4 text-center'>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                     <span>
                                         {counterOn && <CountUp start={0} end={142} duration={2} delay={0} className='purecounter' />}
                                     </span>
-                                    <p>Ready for Occupancy</p>
-                                </div>
-
+                                </ScrollTrigger>
+                                <p>Ready for Occupancy</p>
                             </div>
-                        </ScrollTrigger>
+
+                        </div>
                     </div>
                 </section>
 

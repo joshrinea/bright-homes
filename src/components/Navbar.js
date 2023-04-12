@@ -42,7 +42,9 @@ function Navbar() {
                                             <span>Alpine County</span><i class="bi bi-chevron-right"></i>
                                         </NavLink>
                                         <ul>
-                                            <li><a href="units/alpine/celine.html">Celine</a></li>
+                                            <li>
+                                                <NavLink to="celine">Celine</NavLink>
+                                            </li>
                                             <li><a href="units/alpine.html">Karen</a></li>
                                         </ul>
                                     </li>

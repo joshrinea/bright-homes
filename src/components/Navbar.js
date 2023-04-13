@@ -88,7 +88,7 @@ function Navbar() {
                                     <span>Guides</span> <i className="bi bi-chevron-down"></i>
                                 </NavLink>
                                 <ul>
-                                    <li className="dropdown"><a href="guides.html"><span>For Buyers</span></a></li>
+                                    <li className="dropdown"><NavLink to="guides"><span>For Buyers</span></NavLink></li>
                                     <li className="dropdown"><a href="guides.html"><span>For Sellers</span></a></li>
                                     <li className="dropdown"><a href="guides.html"><span>Online payment</span></a></li>
                                 </ul>

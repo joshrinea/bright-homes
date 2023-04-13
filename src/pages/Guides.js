@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import JS from '../js/sample';
 
 function Guides() {
 
@@ -14,6 +15,7 @@ function Guides() {
         AOS.init();
     }, [])
 
+    const sample = JS.Sample
     return (
         <>
           {/* modal */}
@@ -23,7 +25,7 @@ function Guides() {
             >
                 <Modal show={show} onClick={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Modal heading, {sample}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>

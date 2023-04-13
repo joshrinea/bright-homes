@@ -21,6 +21,14 @@ function Home() {
         });
     }, [])
 
+    let preloader = document.getElementById('#preloader');
+
+    if (preloader) {
+        window.addEventListener('load', () => {
+            preloader.remove()
+        })
+    }
+
     const displayAntipoloDetails = () => {
         const bulacanElement = document.getElementById("bulacanMap");
         const antipoloElement = document.getElementById("antipoloMap");
@@ -390,6 +398,8 @@ function Home() {
                 </section>
                 {/* END OF PROJECT LOCATION SECTION */}
             </main>
+
+            {/* <div id="preloader"></div> */}
         </>
     )
 }

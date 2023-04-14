@@ -50,7 +50,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="explore" element={<Explore />} />
-          <Route path="alphine-county" element={<Alphine />} />
+          <Route path="explore/alphine-county" element={<Alphine />} />
           <Route path="bulacan" element={<Bulacan />} />
           <Route path="pueblo" element={<Pueblo />} />
           <Route path="prime-ville" element={<PrimeVille />} />

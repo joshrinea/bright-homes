@@ -5,6 +5,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 
 import ModelHouse2 from '../img/units/model-house2.png';
+import { NavLink } from "react-router-dom";
 
 function Explore() {
 
@@ -39,9 +40,12 @@ function Explore() {
 
                                     <div className="alpine-county-house col-lg-3">
                                         <figure className="figure">
-                                            <a href="units/alpine.html">
+                                            {/* <a href="units/alpine.html">
                                                 <img src={ModelHouse2} className="figure-img img-fluid rounded" alt="..." />
-                                            </a>
+                                            </a> */}
+                                            <NavLink to="alphine-county">
+                                                <img src={ModelHouse2} className="figure-img img-fluid rounded" alt="..." />
+                                            </NavLink>
                                             <figcaption className="figure-caption text-center">
                                                 <h2><strong>ALPINE COUNTY</strong></h2>
                                             </figcaption>

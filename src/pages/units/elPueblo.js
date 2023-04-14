@@ -5,6 +5,15 @@ import 'aos/dist/aos.css';
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
+import Olivia from '../../img/content_images/EPDR/Olivia - Final.png';
+import Patrizia from '../../img/content_images/EPDR/Patrizia - Final.png';
+import Elin from '../../img/content_images/EPDR/Elin (TH-34) - Final.png';
+import Grande from '../../img/content_images/EPDR/Ysabella Grande - Final.png';
+// import Madeline from '../../img/content_images/EPDR/';
+import Elisse from '../../img/content_images/EPDR/Elisse (B-30) - Final.png';
+import Eliza from '../../img/content_images/EPDR/Eliza - Final.png';
+import Arabella from '../../img/content_images/EPDR/Arabella - Final.png';
+
 function Pueblo() {
 
     useEffect(() => {
@@ -39,7 +48,7 @@ function Pueblo() {
                                         <h2>Olivia</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Olivia} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -98,7 +107,7 @@ function Pueblo() {
                                         <h2>Patrizia</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Patrizia} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -157,7 +166,7 @@ function Pueblo() {
                                         <h2>Elin</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Elin} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -216,7 +225,7 @@ function Pueblo() {
                                         <h2>Ysabella Grande</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Grande} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -275,7 +284,7 @@ function Pueblo() {
                                         <h2>Madeline</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Elisse} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -334,7 +343,7 @@ function Pueblo() {
                                         <h2>Eliza</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Eliza} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
@@ -393,7 +402,7 @@ function Pueblo() {
                                         <h2>Arabella</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a href="#">
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Arabella} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>

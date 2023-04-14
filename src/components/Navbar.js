@@ -1,6 +1,7 @@
 import React from 'react';
 import BHRC_LOGO from '../img/BHRC_LOGO.png';
 import { NavLink, Outlet } from 'react-router-dom';
+import Form from '../forms/Generated.pdf';
 
 function Navbar() {
     return (
@@ -38,7 +39,7 @@ function Navbar() {
                                     <li className="dropdown">
                                         {/* <a href="units/alpine.html"><span>Alpine County</span> <i
                                         className="bi bi-chevron-right"></i></a> */}
-                                        <NavLink to="alphine-county">
+                                        <NavLink to="explore/alphine-county">
                                             <span>Alpine County</span><i class="bi bi-chevron-right"></i>
                                         </NavLink>
                                         <ul>
@@ -106,7 +107,7 @@ function Navbar() {
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav>
 
-                    <a href="download.html" className="get-started-btn">Download</a>
+                    <a href={Form} download={Form} className="get-started-btn">Download</a>
 
                 </div>
             </header>

@@ -4,6 +4,12 @@ import 'aos/dist/aos.css';
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 
+import Kathryn from '../../img/content_images/PVR/Kathryn - Final.png';
+import Kathryn_Modified from '../../img/content_images/PVR/Kathryn Modified - Final.png';
+import Princess_Catherine from '../../img/content_images/PVR/Princess Catherine - Final.png';
+import Madeline from '../../img/content_images/PVR/Madeline - Final.png';
+import Zen from '../../img/content_images/PVR/Zen - Final.png';
+
 function PrimeVille() {
 
     useEffect(() => {
@@ -41,7 +47,7 @@ function PrimeVille() {
 
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a>
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Kathryn} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <p className="card-text">
@@ -109,7 +115,7 @@ function PrimeVille() {
                                         <h2>Kathryn (modified)</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a>
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Kathryn_Modified} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <div className="card-text">
@@ -177,7 +183,7 @@ function PrimeVille() {
                                         <h2>Princess Catherine</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a>
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Princess_Catherine} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <div className="card-text">
@@ -240,11 +246,12 @@ function PrimeVille() {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div className="col-lg-6 mb-5">
                                         <h2>Madeline</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a>
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Madeline} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <div className="card-text">
@@ -307,11 +314,12 @@ function PrimeVille() {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div className="col-lg-6">
                                         <h2>Zen</h2>
                                         <div className="card" style={{ width: '100%', height: '700px' }}>
                                             <a>
-                                                <img src="..." className="card-img-top" style={{ height: '600px' }} />
+                                                <img src={Zen} className="card-img-top" style={{ height: '600px' }} />
                                             </a>
                                             <div className="card-body">
                                                 <div className="card-text">

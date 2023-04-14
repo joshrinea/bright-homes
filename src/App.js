@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -32,17 +33,6 @@ import PrimeVille from './pages/units/primeville';
 function App() {
   return (
     <>
-      {/* <Navbar />
-      <Home />
-      <About />
-      <Explore />
-      <Guides />
-      <Footer />
-
-      <Alphine />
-      <Bulacan />
-      <Pueblo /> */}
-      {/* <RouterProvider router={router} /> */}
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
@@ -51,10 +41,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="explore" element={<Explore />} />
           <Route path="explore/alphine-county" element={<Alphine />} />
-          <Route path="bulacan" element={<Bulacan />} />
-          <Route path="pueblo" element={<Pueblo />} />
-          <Route path="prime-ville" element={<PrimeVille />} />
-          <Route path="celine" element={<Celine />} />
+          <Route path="explore/bulacan-meadows" element={<Bulacan />} />
+          <Route path="explore/el-pueblo" element={<Pueblo />} />
+          <Route path="explore/prime-ville" element={<PrimeVille />} />
+          <Route path="explore/alphine-county/celine" element={<Celine />} />
           <Route path="guides" element={<Guides />} />
         </Routes>
         <Footer />

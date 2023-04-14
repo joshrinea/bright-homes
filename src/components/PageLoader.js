@@ -1,17 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-function PageLoader(){
+function PageLoader() {
 
-    const [loader, setLoader] = useState(true);
-    const preloader = document.getElementById("preloader");
-
-    if (preloader) {
-        window.addEventListener('load', () => {
-            preloader.remove()
-        });
-    }
-
-    return(
+    return (
         <>
             <div id="preloader"></div>
         </>

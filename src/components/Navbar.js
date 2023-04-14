@@ -44,7 +44,7 @@ function Navbar() {
                                         </NavLink>
                                         <ul>
                                             <li>
-                                                <NavLink to="celine">Celine</NavLink>
+                                                <NavLink to="explore/alphine-county/celine">Celine</NavLink>
                                             </li>
                                             <li><a href="units/alpine.html">Karen</a></li>
                                         </ul>
@@ -52,7 +52,7 @@ function Navbar() {
 
                                     <li className="dropdown">
                                         {/* <a href="units/bulacan.html"><span>Bulacan Meadows</span> <i class="bi bi-chevron-right"></i></a> */}
-                                        <NavLink to="bulacan">
+                                        <NavLink to="explore/bulacan-meadows">
                                             <span>Bulacan Meadows</span><i class="bi bi-chevron-right"></i>
                                         </NavLink>
                                         <ul>
@@ -63,7 +63,7 @@ function Navbar() {
 
                                     <li className="dropdown">
                                         {/* <a href="units/elPueblo.html"><span>El Pueblo del Rio</span> <i class="bi bi-chevron-right"></i></a> */}
-                                        <NavLink to="pueblo">
+                                        <NavLink to="explore/el-pueblo">
                                             <span>El Pueblo del Rio</span> <i class="bi bi-chevron-right"></i>
                                         </NavLink>
                                         <ul>
@@ -77,12 +77,20 @@ function Navbar() {
 
                                     <li className="dropdown">
                                         {/* <a href="units/primeville.html"><span>Primeville Residences</span> <i class="bi bi-chevron-right"></i></a> */}
-                                        <NavLink to="prime-ville">
+                                        <NavLink to="explore/prime-ville">
                                             <span>PrimeVille Residences</span> <i class="bi bi-chevron-right"></i>
                                         </NavLink>
                                         <ul>
-                                            <li><a href="units/primeville.html">Princess Catherine</a></li>
-                                            <li><a href="units/primeville.html">Kathryn</a></li>
+                                            <li>
+                                                <NavLink to="explore/prime-ville">
+                                                    Princess Catherine
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink to="explore/prime-ville">
+                                                    Kathryn
+                                                </NavLink>
+                                            </li>
                                         </ul>
                                     </li>
 

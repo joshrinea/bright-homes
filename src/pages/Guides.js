@@ -1,22 +1,42 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import img_1 from '../img/Initial_Materials_for_website/1.jpg';
+import img_2 from '../img/Initial_Materials_for_website/2.png';
+// import img_3 from '../img/Initial_Materials_for_website/3.jpg';
+import {SendEmail,SampleHEHEHE} from '../js/sample.js';
 
 function Guides() {
-
+    let img_set = 0;
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    const [img, setImg] = useState(false);
+    const [sample_js_1, setSendEmail] = useState(false);
+    const [sample_js_2, setSampleJS2] = useState(false);
+    function set_image(img_num){
+        img_set = img_num;
+    }
+    const handleClose = () => setShow(false);
+    function handleShow(set_no){
+        set_image(set_no);
+        if (img_set == 1) {
+            setImg(img_1);
+        }else if(img_set==2){
+            setImg(img_2);
+        }
+        setShow(true)
+    }
+    
 
     useEffect(() => {
+        setSampleJS2(SampleHEHEHE)
         AOS.init();
     }, [])
 
     return (
         <>
-          {/* modal */}
+            {/* modal */}
             <div
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
@@ -25,7 +45,12 @@ function Guides() {
                     <Modal.Header closeButton>
                         <Modal.Title>Requirements</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        {/* Woohoo, you're reading this text in a modal! */}
+                        <div className="container">
+                            <img src={img} className="img-fluid" alt="..." />
+                        </div>
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
@@ -37,7 +62,7 @@ function Guides() {
             <main id='main'>
                 <div className='breadcrumbs bg-primary' data-aos='fade-in' >
                     <div className='container'>
-                        <h2>Guides</h2>
+                        <h2>Guides {sample_js_1},{sample_js_2}</h2>
                     </div>
                 </div>
 
@@ -53,14 +78,14 @@ function Guides() {
 
                                     <div className='row' data-aos="zoom-in" data-aos-delay="100">
                                         <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role='button'>
-                                            <div className='icon-box' onClick={handleShow}>
+                                            <div className='icon-box' onClick={() => handleShow(1)}>
                                                 <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a>Requirements</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                                            <div className='icon-box'>
+                                            <div className='icon-box' onClick={() => handleShow(2)}>
                                                 <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="#">Price list</a></h3>
                                             </div>

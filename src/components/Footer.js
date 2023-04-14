@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import Box from '@mui/material/Box';
+// import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import ScrollToTop from "react-scroll-to-top";
+import { SendEmail } from '../js/sample.js';
+import { Formik, Field, Form } from 'formik';
 
 function Footer() {
-    
+
+    const [sample_js_1, setSendEmail] = useState([]);
+    async function doCreate(data) {
+        // console.log(data)
+        await setSendEmail(SendEmail(data));
+        if (sample_js_1) {
+            console.log('success')
+        } else {
+            
+        }
+    }
+
     return (
         <>
             <footer id="footer">
-                <ScrollToTop smooth top="500" color="white" width="20" height="20" className="back-to-top"/>
+                <ScrollToTop smooth top="500" color="white" width="20" height="20" className="back-to-top" />
                 <div className="footer-top">
                     <div className="container">
                         <div className="row">
@@ -39,7 +55,7 @@ function Footer() {
                                     El Pueblo Del Rio Subdivision,<br />
                                     Sta. Maria, Bulacan<br></br><br></br>
                                 </p>
-                                
+
                             </div>
 
                             <div className="col-lg-2 col-md-6 footer-links">
@@ -65,53 +81,61 @@ function Footer() {
                             </div>
 
                             <div class="col-lg-5 col-md-6 footer-newsletter">
-                                <h4>Inquire Now</h4>
-                                <div class="row mb-3">
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-12">
-                                        <input type="text" class="form-control" placeholder="Full name" aria-label="First name" />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control" placeholder="Email" />
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" placeholder="Mobile" />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-12">
-                                        <input type="text" class="form-control" placeholder="Address" aria-label="Address" />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                            <label for="floatingTextarea">Comments</label>
+                                <Formik
+                                    initialValues={{ full_name: "", email: "", mobile:"", address:"" , comment:"" }}
+                                    onSubmit={async (values) => {
+                                        await new Promise((resolve) => setTimeout(resolve, 500));
+                                        doCreate(values, null, 2);
+                                      }}
+                                >
+                                    <Form>
+                                        <h4>Inquire Now</h4>
+                                        <div class="row mb-3">
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row mb-3">
-                                    <div class="d-grid gap-2 col-4">
-                                        <button class="btn btn-primary" type="button">SUBMIT</button>
-                                    </div>
-                                </div>
+                                        <div class="row mb-3">
+                                            <div class="col-sm-12">
+                                                <Field type="text" id="full_name" name="full_name" className="form-control" placeholder="Full name" aria-label="First name" />
+                                            </div>
+                                        </div>
 
+                                        <div class="row mb-3">
+                                            <div class="col-sm-7">
+                                                <Field type="text" id="email" name="email" className="form-control" placeholder="Email" />
+                                            </div>
+                                            <div class="col">
+                                                <Field type="text" id="mobile" name="mobile" className="form-control" placeholder="Mobile" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-12">
+                                                <Field type="text" id="address" name="address" className="form-control" placeholder="Address" aria-label="Address" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-12">
+                                                <Field className="form-control" type="text" placeholder="Leave a comment here" id="comment" name="comment" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="d-grid gap-2 col-4">
+                                                <Button class="btn btn-primary" type="submit">SUBMIT</Button>
+                                            </div>
+                                        </div>
+                                    </Form>
+                                </Formik>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

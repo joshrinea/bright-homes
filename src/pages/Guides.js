@@ -21,17 +21,14 @@ function Guides() {
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
             >
-                <Modal show={show} onClick={handleClose}>
+                <Modal show={show} onClick={handleClose} size="lg">
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Requirements</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
                         </Button>
                     </Modal.Footer>
                 </Modal>
@@ -58,42 +55,41 @@ function Guides() {
                                         <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role='button'>
                                             <div className='icon-box' onClick={handleShow}>
                                                 <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                <h3><a href="javascript:void(0)">Requirements</a></h3>
-                                               
+                                                <h3><a>Requirements</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="#">Price list</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0'>
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="https://www.pagibigfund.gov.ph/ac/" target='_blank'>HDMF Housing loan calculator</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4' data-bs-toggle="modal" href="#accreditedBanksModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="#accreditedBanksModalToggle">List of accredited banks</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4' href="#download.html" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="download.html">Downloadable forms</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="download.html">Construction bond requirements and guidelines</a></h3>
                                             </div>
                                         </div>
@@ -116,19 +112,19 @@ function Guides() {
                                     <div className='row' data-aos="zoom-in" data-aos-delay="100">
                                         <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className="icon-box">
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">Inventory</a></h3>
                                             </div>
                                         </div>
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className="icon-box">
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">Accreditation form</a></h3>
                                             </div>
                                         </div>
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className="icon-box">
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">Requirements (In-house seller/broker)</a></h3>
                                             </div>
                                         </div>
@@ -149,21 +145,21 @@ function Guides() {
                                     <div className='row' data-aos="zoom-in" data-aos-delay="100">
                                         <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">Over the counter</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">G-CASH</a></h3>
                                             </div>
                                         </div>
 
                                         <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                             <div className='icon-box'>
-                                                <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                 <h3><a href="">Others</a></h3>
                                             </div>
                                         </div>

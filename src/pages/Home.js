@@ -71,8 +71,8 @@ function Home() {
             {   /* ================ HERO SECTION ================ */}
             <section id="hero" className="d-flex justify-content-center align-items-center">
                 <div className="container position-relative" data-aos={"zoom-in"} data-aos-delay={"1000"}>
-                    <h1>Bright Homes &<br />Realty Corporation</h1>
                     <h2>"Kay sarap umuwi sa sariling bahay"</h2>
+                    <h1>Bright Homes &<br />Realty Corporation</h1>
                     {/* <a href="explore.html" className="btn-get-started">Explore now</a> */}
                     <Link to="explore" className="btn-get-started">Explore now</Link>
                 </div>

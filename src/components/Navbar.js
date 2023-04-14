@@ -60,8 +60,11 @@ function Navbar() {
                                         </ul>
                                     </li>
 
-                                    <li className="dropdown"><a href="units/elPueblo.html"><span>El Pueblo del Rio</span> <i
-                                        className="bi bi-chevron-right"></i></a>
+                                    <li className="dropdown">
+                                        {/* <a href="units/elPueblo.html"><span>El Pueblo del Rio</span> <i class="bi bi-chevron-right"></i></a> */}
+                                        <NavLink to="pueblo">
+                                            <span>El Pueblo del Rio</span> <i class="bi bi-chevron-right"></i>
+                                        </NavLink>
                                         <ul>
                                             <li><a href="units/elPueblo.html">Katrina Royale</a></li>
                                             <li><a href="units/elPueblo.html">Ysabella</a></li>
@@ -71,8 +74,11 @@ function Navbar() {
                                         </ul>
                                     </li>
 
-                                    <li className="dropdown"><a href="units/primeville.html"><span>Primeville Residences</span> <i
-                                        className="bi bi-chevron-right"></i></a>
+                                    <li className="dropdown">
+                                        {/* <a href="units/primeville.html"><span>Primeville Residences</span> <i class="bi bi-chevron-right"></i></a> */}
+                                        <NavLink to="prime-ville">
+                                            <span>PrimeVille Residences</span> <i class="bi bi-chevron-right"></i>
+                                        </NavLink>
                                         <ul>
                                             <li><a href="units/primeville.html">Princess Catherine</a></li>
                                             <li><a href="units/primeville.html">Kathryn</a></li>

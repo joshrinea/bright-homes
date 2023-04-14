@@ -11,6 +11,7 @@ import Pueblo from './pages/units/elPueblo';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Celine from './pages/units/alphine/Celine';
+import PrimeVille from './pages/units/primeville';
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -52,6 +53,7 @@ function App() {
           <Route path="alphine-county" element={<Alphine />} />
           <Route path="bulacan" element={<Bulacan />} />
           <Route path="pueblo" element={<Pueblo />} />
+          <Route path="prime-ville" element={<PrimeVille />} />
           <Route path="celine" element={<Celine />} />
           <Route path="guides" element={<Guides />} />
         </Routes>

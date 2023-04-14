@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import BHRC_LOGO from '../img/BHRC_LOGO.png';
 import { NavLink, Outlet } from 'react-router-dom';
 import Form from '../forms/Generated.pdf';
 
 function Navbar() {
+
+    const navRef = useRef()
+    const showNavbar = () => {
+        navRef.current.classList.toggle("mobile-nav-toggle")
+    }
+
+    const handleClick = () => showNavbar(!navRef)
+
     return (
         <>
             <header id="header" className="fixed-top">
                 <div className="container d-flex align-items-center">
 
                     <h1 className="logo me-auto">
-                        <a href="#" className="logo me-auto"><img src={BHRC_LOGO} alt="..." className="img-fluid" /></a>
+                        <a href="#" className="logo me-auto">
+                            <img src={BHRC_LOGO} alt="..." className="img-fluid" />
+                        </a>
 
                         <a href="#">Brighthomes</a>
                     </h1>
 
-                    <nav id="navbar" className="navbar order-last order-lg-0">
+                    <nav id="navbar" className="navbar order-last order-lg-0" ref={navRef}>
                         <ul>
                             <li>
                                 <NavLink to="/" className="nav-links" >

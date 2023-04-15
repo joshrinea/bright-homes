@@ -1648,3 +1648,12 @@ section {
   bottom: 0;
   right: 0;
 }
+
+.snackBar{
+  background-color: green !important;
+  color: white !important;
+}
+
+.snackBar i{
+  color: white !important;
+}

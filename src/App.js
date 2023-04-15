@@ -13,6 +13,7 @@ import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, crea
 import ScrollToTop from './components/ScrollToTop';
 import Celine from './pages/units/alphine/Celine';
 import PrimeVille from './pages/units/primeville';
+import ErrorPage from './components/ErrorPage';
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -46,6 +47,7 @@ function App() {
           <Route path="explore/prime-ville" element={<PrimeVille />} />
           <Route path="explore/alphine-county/celine" element={<Celine />} />
           <Route path="guides" element={<Guides />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -71,13 +71,14 @@ function Guides() {
     const [modal, setModal] = useState(false);
     const [tempData, setTempdata] = useState([])
 
-    const getData = (id, img1, img2, img3, img4, title, desc, size, file) => {
-        let tempData = [id, img1, img2, img3, img4, title, desc, size, file];
+    const getData = (id, img1, img2, img3, img4, title, desc, size, hasFile) => {
+        let tempData = [id, img1, img2, img3, img4, title, desc, size, hasFile];
 
         setTempdata(item => [1, ...tempData]);
 
         return setModal(true)
     }
+
 
     return (
         <>
@@ -111,7 +112,7 @@ function Guides() {
                                                                         <h3><a>Requirements</a></h3>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div> */}
-                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.file)}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
                                                                         <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div>

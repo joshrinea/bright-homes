@@ -3,33 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import { Button } from "react-bootstrap";
 import Guides from "../pages/Guides";
 
-function imageModal() {
-    return (
-        <div className="modal-body">
-
-            <div className="box" style={{ width: '100%' }}>
-                <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
-                <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
-                <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
-                <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
-            </div>
-
-        </div>
-    )
-}
-
-function fileModal() {
-    return (
-        <div className="modal-body">
-
-            <div className="box" style={{ width: '100%' }}>
-                <h1>This is file modal</h1>
-            </div>
-
-        </div>
-    )
-}
-
 
 export default class MyModal extends Component {
 
@@ -40,49 +13,101 @@ export default class MyModal extends Component {
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
         }
 
-        if (this.props.file === 1) {
-            return (
-                <div className="modal show fade" style={modalStyle}>
-                    <div className="modal-dialog modal-dialog-centered modal-lg">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">{this.props.title}</h5>
-                                <button type="button" className="btn-close" onClick={this.props.hide}></button>
-                            </div>
-                            <div className="modal-body">
 
-                                <h1>This is file modal</h1>
+        // if (this.props.file != null ) {
+        //     return (
+        //         <div className="modal show fade" style={modalStyle}>
+        //             <div className="modal-dialog modal-dialog-centered modal-lg">
+        //                 <div className="modal-content">
+        //                     <div className="modal-header">
+        //                         <h5 className="modal-title">{this.props.title}</h5>
+        //                         <button type="button" className="btn-close" onClick={this.props.hide}></button>
+        //                     </div>
+        //                     <div className="modal-body">
 
+        //                         <h1>This is file modal</h1>
+
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
+        // }
+
+        // else {
+        //     return (
+        //         <div className="modal show fade" style={modalStyle}>
+        //             <div className="modal-dialog modal-dialog-centered modal-lg">
+        //                 <div className="modal-content">
+        //                     <div className="modal-header">
+        //                         <h5 className="modal-title">{this.props.title}</h5>
+        //                         <button type="button" className="btn-close" onClick={this.props.hide}></button>
+        //                     </div>
+        //                     <div className="modal-body">
+
+        //                         <div className="box" style={{ width: '100%' }}>
+        //                             <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
+        //                             <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
+        //                             <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
+        //                             <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
+        //                         </div>
+
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
+        // }
+        {
+            if (this.props.hasFile != null) {
+                return (
+                    <div className="modal show fade" style={modalStyle}>
+                        <div className="modal-dialog modal-dialog-centered modal-lg">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">{this.props.title}</h5>
+                                    <button type="button" className="btn-close" onClick={this.props.hide}></button>
+                                </div>
+                                <div className="modal-body">
+    
+                                    <div className="box" style={{ width: '100%' }}>
+                                        <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
+                                        <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
+                                        <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
+                                        <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
+                                    </div>
+    
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
+                )
+            }
+            else {
+                return (
+                    <div className="modal show fade" style={modalStyle}>
+                        <div className="modal-dialog modal-dialog-centered modal-lg">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">{this.props.title}</h5>
+                                    <button type="button" className="btn-close" onClick={this.props.hide}></button>
+                                </div>
+                                <div className="modal-body">
+    
+                                    <div className="box" style={{ width: '100%' }}>
+                                        <a href={this.props.hasFile} download={this.props.hasFile}>Download file</a>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
         }
 
-        else {
-            return (
-                <div className="modal show fade" style={modalStyle}>
-                    <div className="modal-dialog modal-dialog-centered modal-lg">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">{this.props.title}</h5>
-                                <button type="button" className="btn-close" onClick={this.props.hide}></button>
-                            </div>
-                            <div className="modal-body">
+        
 
-                                <div className="box" style={{ width: '100%' }}>
-                                    <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
-                                    <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
-                                    <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
-                                    <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
+        
         }
 
         // return (
@@ -103,7 +128,7 @@ export default class MyModal extends Component {
         //     //     </Modal>
         //     // </div>
 
-           
+
         // )
     }
 }

@@ -16,7 +16,7 @@ const ModalData = {
             title: 'Requirements',
             desc: 'desc1',
             size: 'sm',
-            file: ''
+            hasFile: null
         },
         {
             id: 2,
@@ -24,7 +24,7 @@ const ModalData = {
             title: 'Price List',
             desc: 'desc2',
             size: '',
-            file: ''
+            hasFile: null
         },
         {
             id: 3,
@@ -32,7 +32,7 @@ const ModalData = {
             title: 'HDMF Housing Loan Calculator',
             desc: 'desc3',
             size: '',
-            file: file1
+            hasFile: file1
         },
         {
             id: 4,
@@ -43,7 +43,7 @@ const ModalData = {
             title: 'List of accredited banks',
             desc: 'desc4',
             size: '',
-            file: ''
+            hasFile: null
         },
         {
             id: 5,
@@ -51,7 +51,7 @@ const ModalData = {
             title: 'Downloadable form',
             desc: 'desc5',
             size: '',
-            file: ''
+            hasFile: null
         },
         {
             id: 6,
@@ -59,7 +59,7 @@ const ModalData = {
             title: 'Construction bond requirements and guidelines',
             desc: 'desc6',
             size: '',
-            file: ''
+            hasFile: null
         }
     ],
 
@@ -70,7 +70,7 @@ const ModalData = {
             title: 'Inventory',
             desc: 'This is the inventory page',
             size: '',
-            file: ''
+            hasFile: null
         },
         {
             id: 2,
@@ -78,15 +78,15 @@ const ModalData = {
             title: 'Accreditation form',
             desc: 'This is the Accreditation form page',
             size: '',
-            file: ''
+            hasFile: null
         },
         {
             id: 3,
-            imgSrc: '',
+            imgSrc: null,
             title: 'Requirements (In-house seller/broker)',
             desc: 'This is the Requirements page',
             size: '',
-            file: ''
+            hasFile: null
         },
     ]
 };

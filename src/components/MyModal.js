@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { Button } from "react-bootstrap";
 import Guides from "../pages/Guides";
+import Carousel from "react-bootstrap/Carousel";
 
 
 export default class MyModal extends Component {
@@ -31,6 +32,15 @@ export default class MyModal extends Component {
                                         <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
                                         <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
                                     </div>
+
+                                    <Carousel fade>
+                                        <Carousel.Item>
+                                            <img className="d-block w-100" src={this.props.img1} alt="First Slide" />
+                                            <Carousel.Caption>
+                                                <h3>First Slide</h3>
+                                            </Carousel.Caption>
+                                        </Carousel.Item>
+                                    </Carousel>
     
                                 </div>
                             </div>

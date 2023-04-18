@@ -1,45 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
+import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import ScrollToTop from "react-scroll-to-top";
 import { SendEmail } from '../js/inquiry.js';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, getIn, ErrorMessage } from 'formik';
 import { Alert, Snackbar } from "@mui/material";
+import * as Yup from 'yup';
 
 function Footer() {
-
-    const [sendEmail, setSendEmail] = useState([]);
-     // snackbar
-     const [snackBar, setSnackBar] = useState({
+    const [loading, setLoading] = React.useState(false);
+    function validateForm(value) {
+        let error;
+        if (!value) {
+          error = 'Required field';
+        } 
+        // else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+        //   error = 'Invalid email address';
+        // }
+        return error;
+    }
+    function getStyles(errors, fieldName) {
+        if (getIn(errors, fieldName)) {
+          return {
+            border: '1px solid red'
+          }
+        }
+      }
+    const mobileNumberValidation = Yup.object().shape({
+        mobile: Yup.string()
+            .min(11, 'Invalid mobile number!'),
+    });
+    // snackbar
+    const [snackBar, setSnackBar] = useState({
         open: false,
         vertical: 'top',
         horizontal: 'right',
     });
     const { vertical, horizontal, open } = snackBar;
     let [snackbarData, setSnackbarStatus] = useState({});
-    let snackBarJson ={};
-    const closeSnackBar = (event, reason) => {
+    let snackBarJson = {};
+    function closeSnackBar() {
         setSnackBar({ ...snackBar, open: false })
     }
     function handleSnackBar(newState) {
         setSnackBar({ open: true, ...newState })
     }
     async function doCreate(data) {
-        // console.log(data)
-        await setSendEmail(SendEmail(data));
-        if (sendEmail) {
-            snackBarJson ={"snackbarSeverity":"success","snackbarText":"Email sent succesfully"}
-            setSnackbarStatus(snackbarData=>({...snackbarData,...snackBarJson}))
+
+        // await setSendEmail(SendEmail(data));
+        setLoading(true);
+        const status = await SendEmail(data);
+        if (status.message == 'Success') {
+            snackBarJson = { "snackbarSeverity": "success", "snackbarText": "Email sent succesfully" }
+            setSnackbarStatus(snackbarData => ({ ...snackbarData, ...snackBarJson }))
             handleSnackBar({ vertical: 'top', horizontal: 'right' })
-            console.log('success')
         } else {
-            snackBarJson ={"snackbarSeverity":"error","snackbarText":"Something went wrong"}
-            setSnackbarStatus(snackbarData=>({...snackbarData,...snackBarJson}))
+            snackBarJson = { "snackbarSeverity": "error", "snackbarText": "Something went wrong" }
+            setSnackbarStatus(snackbarData => ({ ...snackbarData, ...snackBarJson }))
             handleSnackBar({ vertical: 'top', horizontal: 'right' })
         }
+        setLoading(false);
     }
-    
+    useEffect(() => {
+        return () => {
+            setLoading(false);
+        };
+    }, []);
     return (
         <>
             <footer id="footer">
@@ -103,15 +130,28 @@ function Footer() {
 
                             <div class="col-lg-5 col-md-6 footer-newsletter">
                                 <Formik
-                                    initialValues={{ full_name: "", email: "", mobile:"", address:"" , comment:"" }}
+                                    initialValues={{ full_name: "", email: "", mobile: "", address: "", comment: "" }}
+                                    validationSchema={mobileNumberValidation}
+                                    validate={(values) => {
+                                        const errors = {};
+
+                                        if (!values.full_name){errors.full_name = 'Required*';} 
+                                        if (!values.email) {errors.email = 'Required*';}else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){errors.email = 'Invalid email address';}
+                                        if (!values.mobile) {errors.mobile = 'Required*';}
+                                        if (!values.address) {errors.address = 'Required*';}
+                                            
+                                        return errors;
+
+                                    }}
                                     onSubmit={async (values) => {
                                         await new Promise((resolve) => setTimeout(resolve, 500));
                                         doCreate(values, null, 2);
-                                      }}
+                                    }}
                                 >
-                                    <Form>
-                                        <h4>Inquire Now</h4>
-                                        {/* <div class="row mb-3">
+                                    {({ errors }) => (
+                                        <Form>
+                                            <h4>Inquire Now</h4>
+                                            {/* <div class="row mb-3">
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control" />
                                             </div>
@@ -120,43 +160,62 @@ function Footer() {
                                             </div>
                                         </div> */}
 
-                                        <div class="row mb-3">
-                                            <div class="col-sm-12">
-                                                <Field type="text" id="full_name" name="full_name" className="form-control" placeholder="Full name" aria-label="First name" />
+                                            <div class="row mb-3">
+                                                <div class="col-sm-12">
+                                                    <Field style={getStyles(errors,'full_name')} type="text" id="full_name" name="full_name" className="form-control" placeholder="Full name" aria-label="First name" />
+                                                    <ErrorMessage name='full_name' style="color:red;" />
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row mb-3">
-                                            <div class="col-sm-7">
-                                                <Field type="text" id="email" name="email" className="form-control" placeholder="Email" />
+                                            <div class="row mb-3">
+                                                <div class="col-sm-7">
+                                                    <Field style={getStyles(errors,'email')} type="email" id="email" name="email" className="form-control" placeholder="Email" />
+                                                    <ErrorMessage name='email' style="color:red;" />
+                                                </div>
+                                                <div class="col">
+                                                    <Field type="number" style={getStyles(errors,'mobile')} id="mobile" name="mobile" className="form-control" placeholder="Mobile" />
+                                                    <ErrorMessage name='mobile' style="color:red;" />
+                                                </div>
                                             </div>
-                                            <div class="col">
-                                                <Field type="text" id="mobile" name="mobile" className="form-control" placeholder="Mobile" />
-                                            </div>
-                                        </div>
 
-                                        <div class="row mb-3">
-                                            <div class="col-sm-12">
-                                                <Field type="text" id="address" name="address" className="form-control" placeholder="Address" aria-label="Address" />
+                                            <div class="row mb-3">
+                                                <div class="col-sm-12">
+                                                    <Field type="text" id="address" style={getStyles(errors,'address')} name="address" className="form-control" placeholder="Address" aria-label="Address" />
+                                                    <ErrorMessage name='address' style="color:red;" />
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row mb-3">
-                                            <div class="col-sm-12">
-                                                <Field className="form-control" type="text" placeholder="Leave a comment here" id="comment" name="comment" />
+                                            <div class="row mb-3">
+                                                <div class="col-sm-12">
+                                                    <Field rows="3" component="textarea" className="form-control" type="text" placeholder="Leave a comment here" id="comment" name="comment" />
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row mb-3">
-                                            <div class="d-grid gap-2 col-4">
-                                                <Button class="btn btn-primary" type="submit">SUBMIT</Button>
+                                            <div class="row mb-3">
+                                                <div class="d-grid gap-2 col-4">
+                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                        <Box sx={{ m: 1, position: 'relative' }}>
+                                                            <Button variant="contained" class="btn btn-primary" type="submit" disabled={loading}>SUBMIT</Button>
+                                                            {loading && (
+                                                                <CircularProgress
+                                                                    size={24}
+                                                                    sx={{
+                                                                        position: 'absolute',
+                                                                        top: '50%',
+                                                                        left: '50%',
+                                                                        marginTop: '-12px',
+                                                                        marginLeft: '-12px',
+                                                                    }}
+                                                                />
+                                                            )}
+                                                        </Box>
+                                                    </Box>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Form>
+                                        </Form>
+                                    )}
                                 </Formik>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

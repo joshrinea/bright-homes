@@ -1,9 +1,8 @@
 import React from "react";
 const url = process.env.REACT_APP_NOT_SECRET_CODE
-var res = {}
+
 async function SendEmail(data) {
     const form_data = new FormData();
-
     for (var key in data) {
         form_data.append(key, data[key])
     }
@@ -15,20 +14,21 @@ async function SendEmail(data) {
                 'Accept': 'application/json',
             }
         })
-        res = await response.ok
+        
+        const res = await response.json();
         if (!response.ok) {
             throw { response, res }
         } else {
-            console.log(res.message)
             return res
         }
     } catch (error) {
-        const errorStatus = error.response.status
-        return res
+        // const errorStatus = error.response.status
+        return error
 
-    } finally {
-        return res
-    }
+    } 
+    // finally {
+    //     return res
+    // }
 }
 
 function SampleHEHEHE() {

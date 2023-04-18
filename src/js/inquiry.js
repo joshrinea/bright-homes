@@ -19,6 +19,7 @@ async function SendEmail(data) {
         if (!response.ok) {
             throw { response, res }
         } else {
+            console.log(res.message)
             return res
         }
     } catch (error) {

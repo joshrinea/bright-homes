@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import ScrollToTop from "react-scroll-to-top";
 import { SendEmail } from '../js/inquiry.js';
 import { Formik, Field, Form, getIn, ErrorMessage } from 'formik';
-import { Alert, Snackbar } from "@mui/material";
+import { Alert, Snackbar  } from "@mui/material";
 import * as Yup from 'yup';
 
 function Footer() {
@@ -77,7 +77,7 @@ function Footer() {
 
                             <div className="col-lg-3 col-md-6 footer-contact">
                                 <h3>Head Office</h3>
-                                <p>
+                               
                                     7th Floor, President Tower <br />
                                     No. 81 Timog Scout Ybardolaza St. <br />
                                     Brgy. South Triangle, Quezon City <br />
@@ -94,7 +94,7 @@ function Footer() {
                                         <li><p>sales@brighthomesrealty.com</p></li>
                                         <li><p>custservice@brighthomesrealty.com</p></li>
                                     </ul>
-                                </p>
+                                    
                                 <br />
 
                                 <h3>Site Office</h3>
@@ -113,7 +113,7 @@ function Footer() {
                                     <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
                                     <li><i class="bx bx-chevron-right"></i> <a href="explore.html">Explore BHRC</a></li>
                                     <li><i class="bx bx-chevron-right"></i> <a href="guides.html">Guides</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="download.html">Download</a></li>
+                                    {/* <li><i class="bx bx-chevron-right"></i> <a href="download.html">Download</a></li> */}
                                 </ul>
                             </div>
 
@@ -143,9 +143,9 @@ function Footer() {
                                         return errors;
 
                                     }}
-                                    onSubmit={async (values) => {
-                                        await new Promise((resolve) => setTimeout(resolve, 500));
+                                    onSubmit={async (values,{resetForm}) => {
                                         doCreate(values, null, 2);
+                                        resetForm({values:''});
                                     }}
                                 >
                                     {({ errors }) => (

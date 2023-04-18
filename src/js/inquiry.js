@@ -31,8 +31,4 @@ async function SendEmail(data) {
     // }
 }
 
-function SampleHEHEHE() {
-    return "This is sample";
-}
-
-export { SendEmail, SampleHEHEHE }
+export { SendEmail }

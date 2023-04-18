@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import BHRC_LOGO from '../img/BHRC_LOGO.png';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, Link } from 'react-router-dom';
 import Form from '../forms/Generated.pdf';
 
 function Navbar() {
@@ -18,11 +18,11 @@ function Navbar() {
                 <div className="container d-flex align-items-center">
 
                     <h1 className="logo me-auto">
-                        <a href="#" className="logo me-auto">
+                        <Link to="/" className="logo me-auto">
                             <img src={BHRC_LOGO} alt="..." className="img-fluid" />
-                        </a>
+                        </Link>
 
-                        <a href="#">Brighthomes</a>
+                        <Link to="/">Brighthomes</Link>
                     </h1>
 
                     <nav id="navbar" className="navbar order-last order-lg-0" ref={navRef}>

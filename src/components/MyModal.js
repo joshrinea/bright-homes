@@ -1,9 +1,44 @@
 import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { Button } from "react-bootstrap";
-import Guides from "../pages/Guides";
-import Carousel from "react-bootstrap/Carousel";
+import Carousel from "react-multi-carousel";
+import 'react-multi-carousel/lib/styles.css';
 
+const responsiveCarousel = {
+    // superLargeDesktop: {
+    //     breakpoint: { max: 4000, min: 3000 },
+    //     items: 5
+    // },
+    // desktop: {
+    //     breakpoint: { max: 3000, min: 1024 },
+    //     items: 3
+    // },
+    // tablet: {
+    //     breakpoint: { max: 1024, min: 464 },
+    //     items: 2
+    // },
+    // mobile: {
+    //     breakpoint: { max: 464, min: 0 },
+    //     items: 1
+    // }
+
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 1
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export default class MyModal extends Component {
 
@@ -24,24 +59,35 @@ export default class MyModal extends Component {
                                     <h5 className="modal-title">{this.props.title}</h5>
                                     <button type="button" className="btn-close" onClick={this.props.hide}></button>
                                 </div>
-                                <div className="modal-body">
-    
-                                    <div className="box" style={{ width: '100%' }}>
+                                <div className="modal-body" >
+
+                                    {/* <div className="box" style={{ width: '100%' }}>
                                         <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
                                         <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
                                         <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
                                         <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
+                                    </div> */}
+
+                                    <div>
+
+                                        <Carousel responsive={responsiveCarousel} infinite={true}>
+
+                                            <div className="carouselItem">
+                                                <img src={this.props.img1} className="carouselImg" />
+                                            </div>
+                                            <div className="carouselItem">
+                                                <img src={this.props.img2} className="carouselImg" />
+                                            </div>
+                                            <div className="carouselItem">
+                                                <img src={this.props.img3} className="carouselImg" />
+                                            </div>
+                                            <div className="carouselItem">
+                                                <img src={this.props.img4} className="carouselImg" />
+                                            </div>
+
+                                        </Carousel>
                                     </div>
 
-                                    <Carousel fade>
-                                        <Carousel.Item>
-                                            <img className="d-block w-100" src={this.props.img1} alt="First Slide" />
-                                            <Carousel.Caption>
-                                                <h3>First Slide</h3>
-                                            </Carousel.Caption>
-                                        </Carousel.Item>
-                                    </Carousel>
-    
                                 </div>
                             </div>
                         </div>
@@ -58,21 +104,28 @@ export default class MyModal extends Component {
                                     <button type="button" className="btn-close" onClick={this.props.hide}></button>
                                 </div>
                                 <div className="modal-body">
-    
-                                    <div className="box" style={{ width: '100%' }}>
-                                        <a href={this.props.hasFile} download={this.props.hasFile}>Download file</a>
+
+                                    <div className="section-title">
+                                        <h2>Instructions</h2>
+                                        <p>{this.props.title}</p>
                                     </div>
-    
+
+                                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <a href={this.props.hasFile} download={this.props.hasFile}>
+                                            <button className="btn-download">Download file <i class='bx bxs-download'></i></button>
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 )
-        }
+            }
 
-        
 
-        
+
+
         }
 
         // return (

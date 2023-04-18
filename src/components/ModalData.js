@@ -1,20 +1,30 @@
 import img_1 from '../img/Initial_Materials_for_website/1.jpg';
 import img_2 from '../img/Initial_Materials_for_website/2.png';
 
-import bank1 from '../img/banks/PNB.png';
-import bank2 from '../img/banks/RCBC.png';
-import bank3 from '../img/banks/bpi.jpg';
-import bank4 from '../img/banks/robinsonsBank.png';
+// import bank1 from '../img/banks/PNB.png';
+// import bank2 from '../img/banks/RCBC.png';
+// import bank3 from '../img/banks/bpi.jpg';
+// import bank4 from '../img/banks/robinsonsBank.png';
+
+import BPI from '../img/banks/bpiBank.png';
+import ROBANK from '../img/banks/robinsonsBank.png';
+import RCBC from '../img/banks/rcbcBank.png';
+import PNB from '../img/banks/pnbBank.png';
 
 import file1 from '../forms/AccreditationForm.pdf';
+import DownloadableForm from '../forms/BuyersInformationSheet.pdf';
+import Generated from '../forms/Generated.pdf';
+import HouseImprovementFAQ from '../forms/HouseImprovementFAQ.pdf';
+import ReservationAgreement from '../forms/ReservationAgreement.pdf';
 
 const ModalData = {
-    forBuyersData:[
+
+    forBuyersData: [
         {
             id: 1,
             imgSrc: img_1,
             title: 'Requirements',
-            desc: 'desc1',
+            desc: 'This is requirements page',
             size: 'sm',
             hasFile: null
         },
@@ -22,7 +32,7 @@ const ModalData = {
             id: 2,
             imgSrc: img_2,
             title: 'Price List',
-            desc: 'desc2',
+            desc: 'Price List page',
             size: '',
             hasFile: null
         },
@@ -30,18 +40,18 @@ const ModalData = {
             id: 3,
             imgSrc: '',
             title: 'HDMF Housing Loan Calculator',
-            desc: 'desc3',
+            desc: 'HDMF Housing Loan Calculator page',
             size: '',
             hasFile: file1
         },
         {
             id: 4,
-            imgSrc: bank1,
-            imgSrc2: bank2,
-            imgSrc3: bank3,
-            imgSrc4: bank4,
+            imgSrc: BPI,
+            imgSrc2: ROBANK,
+            imgSrc3: RCBC,
+            imgSrc4: PNB,
             title: 'List of accredited banks',
-            desc: 'desc4',
+            desc: 'List of accredited banks page',
             size: '',
             hasFile: null
         },
@@ -49,21 +59,24 @@ const ModalData = {
             id: 5,
             imgSrc: '',
             title: 'Downloadable form',
-            desc: 'desc5',
+            desc: 'Downloadable form page',
             size: '',
-            hasFile: null
+            hasFile: DownloadableForm
         },
         {
             id: 6,
             imgSrc: '',
             title: 'Construction bond requirements and guidelines',
-            desc: 'desc6',
+            desc: 'Construction bond requirements and guidelines page',
             size: '',
             hasFile: null
         }
-    ],
+    ]
 
-    forSellersData:[
+};
+
+const sellersData = {
+    forSellersData: [
         {
             id: 1,
             imgSrc: '',
@@ -89,6 +102,35 @@ const ModalData = {
             hasFile: null
         },
     ]
-};
+}
 
-export default ModalData
+const OnlinePayment = {
+    forOnlinePayment: [
+        {
+            id: 1,
+            imgSrc: '',
+            title: 'Over the counter',
+            desc: 'This is the over the counter page',
+            size: '',
+            hasFile: null
+        },
+        {
+            id: 2,
+            imgSrc: '',
+            title: 'G-CASH',
+            desc: 'This is the over the G-CASH page',
+            size: '',
+            hasFile: null
+        },
+        {
+            id: 3,
+            imgSrc: '',
+            title: 'Others',
+            desc: 'This is the over the others page',
+            size: '',
+            hasFile: null
+        },
+    ]
+}
+
+export { ModalData, sellersData, OnlinePayment }

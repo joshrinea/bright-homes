@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Celine from './pages/units/alphine/Celine';
 import PrimeVille from './pages/units/primeville';
 import ErrorPage from './components/ErrorPage';
+// import 'react-multi-carousel/lib/styles.css';
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(

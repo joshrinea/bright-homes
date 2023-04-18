@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 // import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ScrollToTop from "react-scroll-to-top";
-import { SendEmail } from '../js/sample.js';
+import { SendEmail } from '../js/inquiry.js';
 import { Formik, Field, Form } from 'formik';
 
 function Footer() {
@@ -90,14 +90,14 @@ function Footer() {
                                 >
                                     <Form>
                                         <h4>Inquire Now</h4>
-                                        <div class="row mb-3">
+                                        {/* <div class="row mb-3">
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control" />
                                             </div>
                                             <div class="col">
                                                 <input type="text" class="form-control" />
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                         <div class="row mb-3">
                                             <div class="col-sm-12">

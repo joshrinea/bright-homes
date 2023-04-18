@@ -27,10 +27,10 @@ function ErrorPage() {
                     <div>
                         <section id="hero" className="d-flex justify-content-center align-items-center">
                             <div className="container position-relative" >
-                                <h2>Seems like the page you are looking for doesn`t exist anymore</h2>
-                                <h1>Error - 404</h1>
+                                {/* <h2>Seems like the page you are looking for doesn`t exist anymore</h2> */}
+                                <h1>Coming soon...</h1>
                                 {/* <a href="explore.html" className="btn-get-started">Explore now</a> */}
-                                <Link to="explore" className="btn-get-started">Back to Homepage</Link>
+                                <Link to="/" className="btn-get-started">Back to Homepage</Link>
                             </div>
                         </section>
                     </div>

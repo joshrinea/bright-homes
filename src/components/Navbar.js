@@ -119,13 +119,13 @@ function Navbar() {
                                 </ul>
                             </li>
 
-                            <li><NavLink to="#" className="nav-links">What's new?</NavLink></li>
+                            <li><NavLink to="news" className="nav-links">What's new?</NavLink></li>
 
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav>
 
-                    <a href={Form} download={Form} className="get-started-btn">Download</a>
+                    {/* <a href={Form} download={Form} className="get-started-btn">Download</a> */}
 
                 </div>
             </header>

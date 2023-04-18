@@ -6,9 +6,11 @@ import Modal from 'react-bootstrap/Modal';
 import img_1 from '../img/Initial_Materials_for_website/1.jpg';
 import img_2 from '../img/Initial_Materials_for_website/2.png';
 // import img_3 from '../img/Initial_Materials_for_website/3.jpg';
-import { SendEmail, SampleHEHEHE } from '../js/sample.js';
+import { SendEmail, SampleHEHEHE } from '../js/inquiry.js';
 import PageLoader from "../components/PageLoader";
 import { Alert, Snackbar } from "@mui/material";
+import ModalData from "../components/ModalData";
+import MyModal from "../components/MyModal";
 
 function Guides() {
     let img_set = 0;
@@ -19,7 +21,9 @@ function Guides() {
     function set_image(img_num) {
         img_set = img_num;
     }
+
     const handleClose = () => setShow(false);
+
     function handleShow(set_no) {
         set_image(set_no);
         if (img_set == 1) {
@@ -63,6 +67,18 @@ function Guides() {
         setSnackBar({ ...snackBar, open: false })
     }
 
+    // passing modal data
+    const [modal, setModal] = useState(false);
+    const [tempData, setTempdata] = useState([])
+
+    const getData = (id, img1, img2, img3, img4, title, desc, size, file) => {
+        let tempData = [id, img1, img2, img3, img4, title, desc, size, file];
+
+        setTempdata(item => [1, ...tempData]);
+
+        return setModal(true)
+    }
+
     return (
         <>
             {
@@ -86,53 +102,29 @@ function Guides() {
                                             <div className='container' data-aos="fade-up">
 
                                                 <div className='row' data-aos="zoom-in" data-aos-delay="100">
-                                                    <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role='button'>
-                                                        <div className='icon-box' onClick={() => handleShow(1)}>
-                                                            <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a>Requirements</a></h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                                                        <div className='icon-box' onClick={() => handleShow(2)}>
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="#">Price list</a></h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='col-lg-4 col-md-4 mt-4 mt-md-0'>
-                                                        <div className='icon-box'>
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="https://www.pagibigfund.gov.ph/ac/" target='_blank'>HDMF Housing loan calculator</a></h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='col-lg-4 col-md-4 mt-4' data-bs-toggle="modal" href="#accreditedBanksModalToggle" role="button">
-                                                        <div className='icon-box'>
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="#accreditedBanksModalToggle">List of accredited banks</a></h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='col-lg-4 col-md-4 mt-4' href="#download.html" role="button">
-                                                        <div className='icon-box'>
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="download.html">Downloadable forms</a></h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className='col-lg-4 col-md-4 mt-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                                                        <div className='icon-box'>
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="download.html">Construction bond requirements and guidelines</a></h3>
-                                                        </div>
-                                                    </div>
-
-
+                                                    {
+                                                        ModalData.forBuyersData.map((item, index) => {
+                                                            return (
+                                                                <div className='col-lg-4 col-md-4 mt-2' data-bs-toggle="modal" href="#exampleModalToggle" role='button' key={index}>
+                                                                    {/* <div className='icon-box' onClick={() => handleShow(1)}>
+                                                                        <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                                        <h3><a>Requirements</a></h3>
+                                                                        <h3><a>{item.title}</a></h3>
+                                                                    </div> */}
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.file)}>
+                                                                        <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                                        <h3><a>{item.title}</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
                                                 </div>
+
                                             </div>
                                         </section>
                                     </div>
+
                                     {/* END FOR BUYERS SECTION */}
 
                                     {/* For Seller Section */}
@@ -144,13 +136,20 @@ function Guides() {
                                             <div className='container' data-aos="fade-up">
 
                                                 <div className='row' data-aos="zoom-in" data-aos-delay="100">
-                                                    <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                                                        <div className="icon-box">
-                                                            <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
-                                                            <h3><a href="">Inventory</a></h3>
-                                                        </div>
-                                                    </div>
-                                                    <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                                                    {
+                                                        ModalData.forSellersData.map((item, index) => {
+                                                            return (
+                                                                <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button" key={index}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.title, item.desc, item.size, item.file)}>
+                                                                        <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                                        <h3><a>{item.title}</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+
+                                                    {/* <div className='col-lg-4 col-md-4 mt-4 mt-md-0' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                                         <div className="icon-box">
                                                             <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                             <h3><a href="">Accreditation form</a></h3>
@@ -161,7 +160,7 @@ function Guides() {
                                                             <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                             <h3><a href="">Requirements (In-house seller/broker)</a></h3>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                         </section>
@@ -222,19 +221,18 @@ function Guides() {
                     </div>
             }
             {/* modal */}
-            <div
-                className="modal show"
-                style={{ display: 'block', position: 'initial' }}
-            >
+            {/* <div className="modal show" style={{ display: 'block', position: 'initial' }} >
                 <Modal show={show} onClick={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Requirements</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {/* Woohoo, you're reading this text in a modal! */}
                         <div className="container">
                             <img src={img} className="img-fluid" alt="..." />
                         </div>
+                        {
+                            console.log(ModalData.cardData)
+                        }
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
@@ -242,7 +240,17 @@ function Guides() {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+            </div> */}
+
+            <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={3000} onClose={closeSnackBar} key={vertical + horizontal}>
+                <Alert className="snackBar" onClose={closeSnackBar} severity="success" sx={{ width: '100%' }}>
+                    Email sent successfully
+                </Alert>
+            </Snackbar>
+
+            {
+                modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} /> : ''
+            }
 
         </>
     )

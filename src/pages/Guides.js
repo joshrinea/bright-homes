@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from 'react-bootstrap/Button';
 import PageLoader from "../components/PageLoader";
-import ModalData from "../components/ModalData";
+import { ModalData, sellersData, OnlinePayment } from "../components/ModalData";
 import MyModal from "../components/MyModal";
 
 function Guides() {
@@ -92,10 +92,10 @@ function Guides() {
 
                                                 <div className='row' data-aos="zoom-in" data-aos-delay="100">
                                                     {
-                                                        ModalData.forSellersData.map((item, index) => {
+                                                        sellersData.forSellersData.map((item, index) => {
                                                             return (
                                                                 <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button" key={index}>
-                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.title, item.desc, item.size, item.file)}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
                                                                         <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div>
@@ -131,7 +131,19 @@ function Guides() {
                                             <div className='container' data-aos="fade-up">
 
                                                 <div className='row' data-aos="zoom-in" data-aos-delay="100">
-                                                    <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                                                    {
+                                                        OnlinePayment.forOnlinePayment.map((item, index) => {
+                                                            return (
+                                                                <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button" key={index}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
+                                                                        <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
+                                                                        <h3><a>{item.title}</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+                                                    {/* <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                                                         <div className='icon-box'>
                                                             <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                             <h3><a href="">Over the counter</a></h3>
@@ -150,7 +162,7 @@ function Guides() {
                                                             <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                             <h3><a href="">Others</a></h3>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
 
                                                 </div>
                                             </div>

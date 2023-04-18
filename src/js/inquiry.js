@@ -8,7 +8,7 @@ async function SendEmail(data) {
         form_data.append(key, data[key])
     }
     try {
-        const response = await fetch(`${url}concern/create`, {
+        const response = await fetch(`${url}inquiry/send_email`, {
             method: 'POST',
             body: form_data,
             headers: {

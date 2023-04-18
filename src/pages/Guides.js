@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import img_1 from '../img/Initial_Materials_for_website/1.jpg';
-import img_2 from '../img/Initial_Materials_for_website/2.png';
-// import img_3 from '../img/Initial_Materials_for_website/3.jpg';
-import { SendEmail, SampleHEHEHE } from '../js/inquiry.js';
+import { SendEmail } from '../js/inquiry.js';
 import PageLoader from "../components/PageLoader";
 import { Alert, Snackbar } from "@mui/material";
 import ModalData from "../components/ModalData";
@@ -16,27 +12,11 @@ function Guides() {
     let img_set = 0;
     const [show, setShow] = useState(false);
     const [img, setImg] = useState(false);
-    const [sample_js_1, setSendEmail] = useState(false);
-    const [sample_js_2, setSampleJS2] = useState(false);
-    function set_image(img_num) {
-        img_set = img_num;
-    }
+    const [sendEmail, setSendEmail] = useState(false);
 
-    const handleClose = () => setShow(false);
-
-    function handleShow(set_no) {
-        set_image(set_no);
-        if (img_set == 1) {
-            setImg(img_1);
-        } else if (img_set == 2) {
-            setImg(img_2);
-        }
-        setShow(true)
-    }
 
 
     useEffect(() => {
-        setSampleJS2(SampleHEHEHE)
         AOS.init();
     }, [])
 
@@ -88,7 +68,7 @@ function Guides() {
                         <main id='main'>
                             <div className='breadcrumbs bg-primary' data-aos='fade-in' >
                                 <div className='container'>
-                                    <h2>Guides {sample_js_1},{sample_js_2}</h2>
+                                    <h2>Guides</h2>
                                 </div>
                             </div>
 
@@ -250,7 +230,7 @@ function Guides() {
             </Snackbar>
 
             {
-                modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} /> : ''
+                modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} hasFile={tempData[9]} /> : ''
             }
 
         </>

@@ -5,20 +5,41 @@ import Button from '@mui/material/Button';
 import ScrollToTop from "react-scroll-to-top";
 import { SendEmail } from '../js/inquiry.js';
 import { Formik, Field, Form } from 'formik';
+import { Alert, Snackbar } from "@mui/material";
 
 function Footer() {
 
-    const [sample_js_1, setSendEmail] = useState([]);
+    const [sendEmail, setSendEmail] = useState([]);
+     // snackbar
+     const [snackBar, setSnackBar] = useState({
+        open: false,
+        vertical: 'top',
+        horizontal: 'right',
+    });
+    const { vertical, horizontal, open } = snackBar;
+    let [snackbarData, setSnackbarStatus] = useState({});
+    let snackBarJson ={};
+    const closeSnackBar = (event, reason) => {
+        setSnackBar({ ...snackBar, open: false })
+    }
+    function handleSnackBar(newState) {
+        setSnackBar({ open: true, ...newState })
+    }
     async function doCreate(data) {
         // console.log(data)
         await setSendEmail(SendEmail(data));
-        if (sample_js_1) {
+        if (sendEmail) {
+            snackBarJson ={"snackbarSeverity":"success","snackbarText":"Email sent succesfully"}
+            setSnackbarStatus(snackbarData=>({...snackbarData,...snackBarJson}))
+            handleSnackBar({ vertical: 'top', horizontal: 'right' })
             console.log('success')
         } else {
-            
+            snackBarJson ={"snackbarSeverity":"error","snackbarText":"Something went wrong"}
+            setSnackbarStatus(snackbarData=>({...snackbarData,...snackBarJson}))
+            handleSnackBar({ vertical: 'top', horizontal: 'right' })
         }
     }
-
+    
     return (
         <>
             <footer id="footer">
@@ -159,6 +180,11 @@ function Footer() {
                 </div>
 
             </footer>
+            <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={3000} onClose={closeSnackBar} key={vertical + horizontal}>
+                <Alert className="snackBar" onClose={closeSnackBar} severity={snackbarData.snackbarSeverity} sx={{ width: '100%' }}>
+                    {snackbarData.snackbarText}
+                </Alert>
+            </Snackbar>
         </>
     )
 }

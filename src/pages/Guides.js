@@ -2,20 +2,11 @@ import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from 'react-bootstrap/Button';
-import { SendEmail } from '../js/inquiry.js';
 import PageLoader from "../components/PageLoader";
-import { Alert, Snackbar } from "@mui/material";
 import ModalData from "../components/ModalData";
 import MyModal from "../components/MyModal";
 
 function Guides() {
-    let img_set = 0;
-    const [show, setShow] = useState(false);
-    const [img, setImg] = useState(false);
-    const [sendEmail, setSendEmail] = useState(false);
-
-
-
     useEffect(() => {
         AOS.init();
     }, [])
@@ -29,23 +20,6 @@ function Guides() {
             setLoading(false)
         }, 500)
     }, [])
-
-    // snackbar
-    const [snackBar, setSnackBar] = useState({
-        open: false,
-        vertical: 'top',
-        horizontal: 'right',
-    });
-
-    const { vertical, horizontal, open } = snackBar;
-
-    const handleSnackBar = (newState) => () => {
-        setSnackBar({ open: true, ...newState })
-    }
-
-    const closeSnackBar = (event, reason) => {
-        setSnackBar({ ...snackBar, open: false })
-    }
 
     // passing modal data
     const [modal, setModal] = useState(false);
@@ -178,18 +152,6 @@ function Guides() {
                                                         </div>
                                                     </div>
 
-                                                    {/* snackbar */}
-
-                                                    <Button variant="outlined" className="mt-5" onClick={handleSnackBar({ vertical: 'top', horizontal: 'right' })}>
-                                                        SnackBar success
-                                                    </Button>
-
-                                                    <Button variant="outlined" className="mt-5" onClick={handleSnackBar({ vertical: 'top', horizontal: 'right' })}>
-                                                        SnackBar danger
-                                                    </Button>
-
-
-
                                                 </div>
                                             </div>
                                         </section>
@@ -222,12 +184,6 @@ function Guides() {
                     </Modal.Footer>
                 </Modal>
             </div> */}
-
-            <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={3000} onClose={closeSnackBar} key={vertical + horizontal}>
-                <Alert className="snackBar" onClose={closeSnackBar} severity="success" sx={{ width: '100%' }}>
-                    Email sent successfully
-                </Alert>
-            </Snackbar>
 
             {
                 modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} hasFile={tempData[9]} /> : ''

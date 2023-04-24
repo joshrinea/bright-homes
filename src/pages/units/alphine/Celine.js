@@ -38,6 +38,8 @@ function Celine() {
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "Celine | Brighthomes";
     }, [])
 
     return (

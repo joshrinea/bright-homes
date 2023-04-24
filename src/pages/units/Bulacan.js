@@ -21,6 +21,8 @@ function Bulacan() {
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "Bulacan Meadows | Brighthomes";
     }, [])
 
     return (

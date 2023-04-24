@@ -5,19 +5,16 @@ import AOS from "aos";
 import 'aos/dist/aos.css'
 
 function ErrorPage() {
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, [])
     
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "404 Not found"
     }, [])
 
     return (
@@ -26,7 +23,7 @@ function ErrorPage() {
                 loading ? <PageLoader /> :
                     <div>
                         <section id="hero" className="d-flex justify-content-center align-items-center">
-                            <div className="container position-relative" >
+                            <div className="container position-relative"  style={{ textAlign: 'center' }}>
                                 {/* <h2>Seems like the page you are looking for doesn`t exist anymore</h2> */}
                                 <h1>Coming soon...</h1>
                                 {/* <a href="explore.html" className="btn-get-started">Explore now</a> */}

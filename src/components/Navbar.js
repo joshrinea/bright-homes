@@ -7,10 +7,16 @@ function Navbar() {
 
     const navRef = useRef()
     const showNavbar = () => {
-        navRef.current.classList.toggle("mobile-nav-toggle")
+        navRef.current.classList.toggle("responsive_navbar")
     }
 
     const handleClick = () => showNavbar(!navRef)
+
+    const showNav = () => {
+        document.getElementById("navbar").classList.toggle('navbar-mobile')
+        // this.classList.toggle('bi-list')
+        // this.classList.toggle('bi-x')
+    }
 
     return (
         <>
@@ -122,7 +128,7 @@ function Navbar() {
                             <li><NavLink to="news" className="nav-links">What's new?</NavLink></li>
 
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <i class="bi bi-list mobile-nav-toggle" onClick={showNav}></i>
                     </nav>
 
                     {/* <a href={Form} download={Form} className="get-started-btn">Download</a> */}

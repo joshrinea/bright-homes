@@ -6,7 +6,10 @@ import PageLoader from "../components/PageLoader";
 function About() {
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+        document.title = "About | Brighthomes"
     }, [])
 
     const [loading, setLoading] = useState(false)
@@ -18,7 +21,7 @@ function About() {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        // }, window.addEventListener('load', setLoading))
+            // }, window.addEventListener('load', setLoading))
         }, 500)
     }, [])
 

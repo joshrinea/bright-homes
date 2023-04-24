@@ -20,6 +20,8 @@ function Home() {
         AOS.init({
             duration: 1000
         });
+        // page title
+        document.title = "Home | Brighthomes"
     }, [])
 
     const [loading, setLoading] = useState(false)

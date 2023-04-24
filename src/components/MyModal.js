@@ -24,11 +24,11 @@ const responsiveCarousel = {
 
     superLargeDesktop: {
         breakpoint: { max: 4000, min: 3000 },
-        items: 1
+        items: 2
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 1
+        items: 2
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -53,7 +53,7 @@ export default class MyModal extends Component {
             if (this.props.hasFile == null) {
                 return (
                     <div className="modal show fade" style={modalStyle}>
-                        <div className="modal-dialog modal-dialog-centered modal-lg">
+                        <div className="modal-dialog modal-dialog-centered modal-sm">
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <h5 className="modal-title">{this.props.title}</h5>
@@ -61,16 +61,9 @@ export default class MyModal extends Component {
                                 </div>
                                 <div className="modal-body" >
 
-                                    {/* <div className="box" style={{ width: '100%' }}>
-                                        <img src={this.props.img1} className="img-fluid" style={{ width: '100%' }} />
-                                        <img src={this.props.img2} className="img-fluid" style={{ width: '100%' }} />
-                                        <img src={this.props.img3} className="img-fluid" style={{ width: '100%' }} />
-                                        <img src={this.props.img4} className="img-fluid" style={{ width: '100%' }} />
-                                    </div> */}
-
                                     <div>
 
-                                        <Carousel responsive={responsiveCarousel} infinite={true}>
+                                        {/* <Carousel responsive={responsiveCarousel} infinite={true}>
 
                                             <div className="carouselItem">
                                                 <img src={this.props.img1} className="carouselImg" />
@@ -85,7 +78,28 @@ export default class MyModal extends Component {
                                                 <img src={this.props.img4} className="carouselImg" />
                                             </div>
 
-                                        </Carousel>
+                                        </Carousel> */}
+
+                                        <div className="container-fluid">
+                                            <div className="row">
+                                                <div class="col-6 col-sm-6 p-2" >
+                                                    <img src={this.props.img1} className="img-fluid" />
+                                                </div>
+                                                <div class="col-6 col-sm-6 p-2" >
+                                                    <img src={this.props.img2} className="img-fluid" />
+                                                </div>
+                                            </div>
+
+                                            <div className="row">
+                                                <div class="col-6 col-sm-6 p-2" >
+                                                    <img src={this.props.img3} className="img-fluid" />
+                                                </div>
+                                                <div class="col-6 col-sm-6 p-2" >
+                                                    <img src={this.props.img4} className="img-fluid" />
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                 </div>

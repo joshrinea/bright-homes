@@ -711,6 +711,12 @@ section {
   position: absolute;
 }
 
+@media screen and (max-width: 990px) {
+  .featured-projects .featured-items {
+    margin-top: 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Leaflet
 --------------------------------------------------------------*/
@@ -1658,18 +1664,18 @@ section {
   color: white !important;
 } */
 
-.carouselItem{
+.carouselItem {
   margin: 0 20px;
   padding: 2rem 0;
 }
 
-.carouselItem img{
+.carouselItem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.modal-body .btn-download{
+.modal-body .btn-download {
   color: #030ba6;
   padding: 10px;
   border: 2px solid #030ba6;
@@ -1678,7 +1684,7 @@ section {
   font-weight: bold;
 }
 
-.modal-body .btn-download:hover{
+.modal-body .btn-download:hover {
   border: 2px solid #030ba6;
   background-color: #030ba6;
   color: white;

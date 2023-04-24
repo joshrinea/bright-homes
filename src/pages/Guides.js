@@ -8,7 +8,10 @@ import MyModal from "../components/MyModal";
 
 function Guides() {
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+        document.title = "Guides | Brighthomes"
     }, [])
 
     // page loader

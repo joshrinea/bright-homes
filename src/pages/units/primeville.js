@@ -21,13 +21,15 @@ function PrimeVille() {
     }, [])
 
     const [counterOn, setCounterOn] = useState(false);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "Primeville Residences | Brighthomes";
     }, [])
 
     return (

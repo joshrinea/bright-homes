@@ -30,6 +30,8 @@ function Pueblo() {
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "El Pueblo del Rio | Brighthomes"
     }, [])
 
     return (

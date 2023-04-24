@@ -11,7 +11,10 @@ import PageLoader from "../components/PageLoader";
 function Explore() {
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+        document.title = "Explore BHRC | Brighthomes"
     }, [])
 
     const [loading, setLoading] = useState(false)

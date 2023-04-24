@@ -11,7 +11,9 @@ import PageLoader from "../../components/PageLoader";
 function Alphine() {
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
     }, [])
 
     const [counterOn, setCounterOn] = useState(false);
@@ -23,6 +25,8 @@ function Alphine() {
         setTimeout(() => {
             setLoading(false)
         }, 500)
+
+        document.title = "Alphine County | Brighthomes";
     }, [])
 
     return (

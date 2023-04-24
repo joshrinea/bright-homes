@@ -1,5 +1,14 @@
-import img_1 from '../img/Initial_Materials_for_website/1.jpg';
-import img_2 from '../img/Initial_Materials_for_website/2.png';
+import HDMF_Financing_El_Pueblo from '../img/Initial_Materials_for_website/HDMF_Financing_El_Pueblo.jpg';
+import Bank_HDMF_Financing_Primeville from '../img/Initial_Materials_for_website/Bank_HDMF_Financing_Primeville.png';
+import Bank_HDMF_Financing_Primeville2 from '../img/Initial_Materials_for_website/Bank_HDMF_Financing_Primeville2.png';
+import Bank_HDMF_Financing_Primeville3 from '../img/Initial_Materials_for_website/Bank_HDMF_Financing_Primeville3.png';
+import Kathryn_Pricelist_inventory from '../img/Initial_Materials_for_website/Kathryn_Pricelist_inventory.png';
+import El_pueblo_del_rio_bank_financing from '../img/Initial_Materials_for_website/El_pueblo_del_rio_bank_financing.png';
+import arabella_price_list_inventory from '../img/Initial_Materials_for_website/arabella_price_list_inventory.png';
+import Ysabella_pricelist_inventory from '../img/Initial_Materials_for_website/Ysabella_pricelist_inventory.png';
+import Kathryn_Modified_PriceList_Inventory from '../img/Initial_Materials_for_website/Kathryn_Modified_PriceList_Inventory.png';
+import Elin_PriceList_Inventory from '../img/Initial_Materials_for_website/Elin_PriceList_Inventory.jpg';
+import Eliza_PriceList_Inventory from '../img/Initial_Materials_for_website/Eliza_PriceList_Inventory.png';
 
 // import bank1 from '../img/banks/PNB.png';
 // import bank2 from '../img/banks/RCBC.png';
@@ -22,7 +31,10 @@ const ModalData = {
     forBuyersData: [
         {
             id: 1,
-            imgSrc: img_1,
+            imgSrc: Bank_HDMF_Financing_Primeville2,
+            imgSrc2: Bank_HDMF_Financing_Primeville3,
+            imgSrc3: Kathryn_Pricelist_inventory,
+            imgSrc4: El_pueblo_del_rio_bank_financing,
             title: 'Requirements',
             desc: 'This is requirements page',
             size: 'sm',
@@ -30,7 +42,7 @@ const ModalData = {
         },
         {
             id: 2,
-            imgSrc: img_2,
+            imgSrc: Bank_HDMF_Financing_Primeville,
             title: 'Price List',
             desc: 'Price List page',
             size: '',

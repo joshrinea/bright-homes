@@ -62,11 +62,13 @@ function Footer() {
         }
         setLoading(false);
     }
+
     useEffect(() => {
         return () => {
             setLoading(false);
         };
     }, []);
+    
     return (
         <>
             <footer id="footer">
@@ -80,8 +82,9 @@ function Footer() {
                                
                                     7th Floor, President Tower <br />
                                     No. 81 Timog Scout Ybardolaza St. <br />
-                                    Brgy. South Triangle, Quezon City <br />
+                                    Brgy. South Triangle, Quezon City <br /> 
 
+                                    <br />
                                     <strong>Phone:</strong>
                                     <ul>
                                         <li><p>+63-2 920 0598</p></li>

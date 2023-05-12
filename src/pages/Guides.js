@@ -9,7 +9,10 @@ import MyModal from "../components/MyModal";
 function Guides() {
     useEffect(() => {
         AOS.init({
-            duration: 1000
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
         document.title = "Guides | Brighthomes"
     }, [])
@@ -28,8 +31,8 @@ function Guides() {
     const [modal, setModal] = useState(false);
     const [tempData, setTempdata] = useState([])
 
-    const getData = (id, img1, img2, img3, img4, title, desc, size, hasFile) => {
-        let tempData = [id, img1, img2, img3, img4, title, desc, size, hasFile];
+    const getData = (id, images, img1, img2, img3, img4, title, desc, size, hasFile) => {
+        let tempData = [id, images, img1, img2, img3, img4, title, desc, size, hasFile];
 
         setTempdata(item => [1, ...tempData]);
 
@@ -69,7 +72,7 @@ function Guides() {
                                                                         <h3><a>Requirements</a></h3>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div> */}
-                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.images, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
                                                                         <i class='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div>
@@ -98,7 +101,7 @@ function Guides() {
                                                         sellersData.forSellersData.map((item, index) => {
                                                             return (
                                                                 <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button" key={index}>
-                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.images, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
                                                                         <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div>
@@ -138,7 +141,7 @@ function Guides() {
                                                         OnlinePayment.forOnlinePayment.map((item, index) => {
                                                             return (
                                                                 <div className='col-lg-4 col-md-4' data-bs-toggle="modal" href="#exampleModalToggle" role="button" key={index}>
-                                                                    <div className="icon-box" onClick={() => getData(item.id, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
+                                                                    <div className="icon-box" onClick={() => getData(item.id, item.images, item.imgSrc, item.imgSrc2, item.imgSrc3, item.imgSrc4, item.title, item.desc, item.size, item.hasFile)}>
                                                                         <i className='bx bx-file' style={{ color: '#4233ff' }}></i>
                                                                         <h3><a>{item.title}</a></h3>
                                                                     </div>
@@ -201,7 +204,8 @@ function Guides() {
             </div> */}
 
             {
-                modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} hasFile={tempData[9]} /> : ''
+                // modal === true ? <MyModal id={tempData[1]} img1={tempData[2]} img2={tempData[3]} img3={tempData[4]} img4={tempData[5]} title={tempData[6]} desc={tempData[7]} size={tempData[8]} hide={() => setModal(false)} hasFile={tempData[9]} /> : ''
+                modal === true ? <MyModal id={tempData[1]} images={tempData[2]} img1={tempData[3]} img2={tempData[4]} img3={tempData[5]} img4={tempData[6]} title={tempData[7]} desc={tempData[8]} size={tempData[9]} hide={() => setModal(false)} hasFile={tempData[10]} /> : ''
             }
 
         </>

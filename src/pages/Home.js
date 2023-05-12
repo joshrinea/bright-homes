@@ -18,7 +18,10 @@ function Home() {
 
     useEffect(() => {
         AOS.init({
-            duration: 1000
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
         // page title
         document.title = "Home | Brighthomes"
@@ -73,7 +76,7 @@ function Home() {
     return (
         <>
             {
-                loading ? <PageLoader /> : 
+                loading ? <PageLoader /> :
                     <div>
                         {   /* ================ HERO SECTION ================ */}
                         <section id="hero" className="d-flex justify-content-center align-items-center">

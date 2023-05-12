@@ -19,7 +19,12 @@ import PageLoader from "../../components/PageLoader";
 function Pueblo() {
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
     }, [])
 
     const [counterOn, setCounterOn] = useState(false);

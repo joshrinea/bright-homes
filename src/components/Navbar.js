@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import BHRC_LOGO from '../img/BHRC_LOGO.png';
 import { NavLink, Outlet, Link } from 'react-router-dom';
-import Form from '../forms/Generated.pdf';
+// import Form from '../forms/Generated.pdf';
 
 function Navbar() {
 
@@ -16,6 +16,15 @@ function Navbar() {
         document.getElementById("navbar").classList.toggle('navbar-mobile')
         // this.classList.toggle('bi-list')
         // this.classList.toggle('bi-x')
+    }
+
+    const showDropDown = () => {
+        window.addEventListener('click', '.navbar .dropdown > a', function(e){
+            if(document.getElementById("navbar").classList.contains("navbar-mobile")){
+                e.preventDefault()
+                this.nextElementSibling.classList.toggle("dropdown-active")
+            }
+        }, true)
     }
 
     return (

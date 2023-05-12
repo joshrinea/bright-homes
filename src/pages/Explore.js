@@ -12,7 +12,10 @@ function Explore() {
 
     useEffect(() => {
         AOS.init({
-            duration: 1000
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
         document.title = "Explore BHRC | Brighthomes"
     }, [])
@@ -136,29 +139,29 @@ function Explore() {
                                     <div className='row counters'>
 
                                         <div className='col-lg-4 col-4 text-center'>
-                                            <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                                <span>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={52} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                            </ScrollTrigger>
+                                                </ScrollTrigger>
+                                            </span>
                                             <p>Units sold</p>
                                         </div>
 
                                         <div className='col-lg-4 col-4 text-center'>
-                                            <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                                <span>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={99} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                            </ScrollTrigger>
+                                                </ScrollTrigger>
+                                            </span>
                                             <p>Units Available</p>
                                         </div>
 
                                         <div className='col-lg-4 col-4 text-center'>
-                                            <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                                <span>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={142} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                            </ScrollTrigger>
+                                                </ScrollTrigger>
+                                            </span>
                                             <p>Ready for Occupancy</p>
                                         </div>
 
@@ -177,31 +180,35 @@ function Explore() {
 
                             <section id='counts' className='counts section-bg'>
                                 <div className='container'>
-                                    <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                        <div className='row counters'>
+                                    <div className='row counters'>
 
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={29} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Units sold</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={100} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Units Available</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={97} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Ready for Occupancy</p>
-                                            </div>
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Units sold</p>
                                         </div>
-                                    </ScrollTrigger>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                                                    {counterOn && <CountUp start={0} end={100} duration={2} delay={0} className='purecounter' />}
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Units Available</p>
+                                        </div>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                                                    {counterOn && <CountUp start={0} end={97} duration={2} delay={0} className='purecounter' />}
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Ready for Occupancy</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
 
@@ -216,32 +223,32 @@ function Explore() {
 
                             <section id='counts' className='counts section-bg'>
                                 <div className='container'>
-                                    <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                        <div className='row counters'>
+                                    <div className='row counters'>
 
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={32} duration={2} delay={0} className='purecounter' />}
-
-                                                </span>
-                                                <p>Units sold</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={80} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Units Available</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={117} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Ready for Occupancy</p>
-                                            </div>
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Units sold</p>
                                         </div>
-                                    </ScrollTrigger>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                {counterOn && <CountUp start={0} end={80} duration={2} delay={0} className='purecounter' />}
+                                            </span>
+                                            <p>Units Available</p>
+                                        </div>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                {counterOn && <CountUp start={0} end={117} duration={2} delay={0} className='purecounter' />}
+                                            </span>
+                                            <p>Ready for Occupancy</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </section>
 
@@ -256,31 +263,37 @@ function Explore() {
 
                             <section id='counts' className='counts section-bg'>
                                 <div className='container'>
-                                    <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-                                        <div className='row counters'>
 
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
+                                    <div className='row counters'>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                                     {counterOn && <CountUp start={0} end={17} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Units sold</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={128} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Units Available</p>
-                                            </div>
-
-                                            <div className='col-lg-4 col-4 text-center'>
-                                                <span>
-                                                    {counterOn && <CountUp start={0} end={101} duration={2} delay={0} className='purecounter' />}
-                                                </span>
-                                                <p>Ready for Occupancy</p>
-                                            </div>
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Units sold</p>
                                         </div>
-                                    </ScrollTrigger>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                                                    {counterOn && <CountUp start={0} end={128} duration={2} delay={0} className='purecounter' />}
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Units Available</p>
+                                        </div>
+
+                                        <div className='col-lg-4 col-4 text-center'>
+                                            <span>
+                                                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                                                    {counterOn && <CountUp start={0} end={101} duration={2} delay={0} className='purecounter' />}
+                                                </ScrollTrigger>
+                                            </span>
+                                            <p>Ready for Occupancy</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </section>
 
